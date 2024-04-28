@@ -1,0 +1,24 @@
+/* Add your styles here */
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+#background-section {
+    background-image: url('C:\\Users\\Hp\\Downloads\\istockphoto-1005938682-612x612.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
