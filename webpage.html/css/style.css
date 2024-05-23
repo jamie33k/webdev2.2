@@ -134,3 +134,8 @@ footer {
   color: white;
   padding: 15px;
 }
+.logo {
+  max-width: 80px; /* Adjust the size as needed */
+  height: auto;
+  margin-right: 20px;
+}
