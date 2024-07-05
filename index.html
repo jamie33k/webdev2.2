@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rianab Logistics - Quotation</title>
+  <title>Rianab Logistics</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,43 +16,51 @@
       background-color: #343a40;
       color: white;
       padding: 20px 0;
-    }
-    h1 {
       text-align: center;
-      font-size: 2em;
-      margin-bottom: 10px;
+    }
+    nav {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    nav li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #f1f1f1;
+    }
+    main {
+      padding: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .banner {
       text-align: center;
       margin-bottom: 40px;
     }
-    .banner h2 {
-      font-size: 1.5em;
-      margin-bottom: 15px;
-    }
-    .banner p {
-      font-size: 1em;
-      line-height: 1.5;
-    }
-    .services {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+    .services-table {
+      width: 100%;
+      border-collapse: collapse;
       margin-bottom: 40px;
     }
-    .services li {
-      margin: 10px;
-      text-align: center;
-      width: calc(33% - 20px); /* Responsive layout for services */
+    .services-table th,
+    .services-table td {
       border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 5px;
+      padding: 12px;
+      text-align: left;
     }
-    .services li h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
+    .services-table th {
+      background-color: #343a40;
+      color: white;
     }
     .form-group {
       margin-bottom: 20px;
@@ -65,21 +72,16 @@
       margin-right: 10px;
       font-weight: bold;
     }
-    .cargo-type-container {
+    .form-group input,
+    .form-group select {
       flex-basis: 80%;
-    }
-    input[type="text"],
-    input[type="number"] {
-      width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
-    }
-    select {
       width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
+    }
+    .form-container {
+      margin-bottom: 40px;
     }
     button {
       background-color: #4CAF50;
@@ -100,79 +102,140 @@
       padding: 15px;
     }
     .logo {
-      max-width: 1500px; /* Enlarged to 1.7 times */
+      max-width: 1500px;
       height: auto;
-      margin-right: 87px;
       padding: 20px 12px;
-      padding-left: 1rem;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sign-container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .form-container h2,
+    .sign-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <header class="bg-dark text-white">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          
-        </div>
-        <div class="col-md-8">
-          <nav class="navbar navbar-expand-md navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="./index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./webpage.html/Pages/aboutus.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/webpage.html/Pages/services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./webpage.html/Pages/contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./webpage.html/Pages/consolidation.html">Consolidation</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./webpage.html/Pages/locations.html">Locations</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    More
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="./webpage.html/Pages/quotation.html">Quotation</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
+  <header>
+    <h1><img src="/webpage.html/Pages/images/logo.jpg" class="logo" width="42%"></h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./webpage.html/Pages/aboutus.html">About Us</a></li>
+        <li><a href="/webpage.html/Pages/services.html">Services</a></li>
+        <li><a href="./webpage.html/Pages/contact.html">Contact</a></li>
+        <li><a href="./webpage.html/Pages/consolidation.html">Consolidation</a></li>
+        <li><a href="./webpage.html/Pages/locations.html">Locations</a></li>
+        <li><a href="./webpage.html/Pages/quotation.html">Quotation</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     <div class="banner">
-      <h1>Home</h1>
-      <h1><img src="/webpage.html/Pages/images/logo.jpg" class="logo img-fluid" width="42%"></h1>
+      <h1>Welcome to Rianab Logistics</h1>
+      <img src="/webpage.html/Pages/images/portimage2.jpg" class="logo" width="69%" alt="Port Image">
       <p>Unleash the Power of Global Trade with Rianab Logistics.</p>
       <p>Rianab Logistics Limited isn't just another clearing and forwarding agency. We're your strategic partner in navigating the exciting world of international commerce.</p>
       <p>At Rianab Logistics, we're not just about moving cargo – we're about propelling your business ambitions to new horizons.</p>
       <p>With a complete range of Sea Freight Services, we leverage volumes smartly to deliver competitive sea transportation in every trade lane between Kenya, East Africa, Europe, Middle and Far East Asia.</p>
     </div>
+
+    <h2>Our Services</h2>
+    <table class="services-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sea Freight</td>
+          <td>International sea freight services.</td>
+          <td>$500</td>
+        </tr>
+        <tr>
+          <td>Air Freight</td>
+          <td>Fast and reliable air freight services.</td>
+          <td>$1000</td>
+        </tr>
+        <tr>
+          <td>Customs Clearance</td>
+          <td>Expert customs clearance services.</td>
+          <td>$300</td>
+        </tr>
+        <tr>
+          <td>Warehousing</td>
+          <td>Secure and affordable warehousing solutions.</td>
+          <td>$200/month</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="form-container">
+      <h2>Capture Goods or Service Details</h2>
+      <form>
+        <div class="form-group">
+          <label for="goods-name">Goods/Service Name:</label>
+          <input type="text" id="goods-name" name="goods-name" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <input type="text" id="description" name="description" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input type="number" id="price" name="price" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="sign-container">
+      <h2>Sign Up</h2>
+      <form>
+        <div class="form-group">
+          <label for="signup-username">Username:</label>
+          <input type="text" id="signup-username" name="signup-username" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="signup-email" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password:</label>
+          <input type="password" id="signup-password" name="signup-password" required>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    <div class="sign-container">
+      <h2>Sign In</h2>
+      <form>
+        <div class="form-group">
+          <label for="signin-username">Username:</label>
+          <input type="text" id="signin-username" name="signin-username" required>
+        </div>
+        <div class="form-group">
+          <label for="signin-password">Password:</label>
+          <input type="password" id="signin-password" name="signin-password" required>
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
   </main>
 
-  <footer class="bg-dark text-white">
+  <footer>
     <p>&copy; Copyright Rianab Logistics Limited. All Rights Reserved.</p>
   </footer>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
